@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rgirodonnodejsfirst
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rgirodonnodejsfirst
+  template:
+    metadata:
+      labels: # labels to select/identify the deployment
+        app: rgirodonnodejsfirst  
+    spec:     # pod spec                  
+      containers: 
+      - name: rgirodonnodejsfirst 
+        image: rgirodon/nodejsfirst # image we pushed
+        ports:
+        - containerPort: 8080
