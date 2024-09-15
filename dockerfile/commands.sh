@@ -1,3 +1,5 @@
+#!/bin/sh
+
 docker build . -t rgirodon/python_helloworld
 
 docker run rgirodon/python_helloworld
