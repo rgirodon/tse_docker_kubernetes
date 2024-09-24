@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rgirodonnodejsfirst
+  name: rgirodon-nodejs-helloword
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: rgirodonnodejsfirst
+      app: rgirodon-nodejs-helloword
   template:
     metadata:
       labels: # labels to select/identify the deployment
-        app: rgirodonnodejsfirst  
+        app: rgirodon-nodejs-helloword  
     spec:     # pod spec                  
       containers: 
-      - name: rgirodonnodejsfirst 
-        image: rgirodon/nodejsfirst # image we pushed
+      - name: nodejs-helloword 
+        image: rgirodon/nodejs_helloword # image we pushed
+        imagePullPolicy: Never
         ports:
         - containerPort: 8080
